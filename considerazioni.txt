@@ -1,0 +1,29 @@
+
+DA VALUTARE:
+
+	- Spostare exceptions da groups a schedules
+	- Non inferire automaticamente che se si è dentro uno schedule vada impostato a 1 il valore del pin digitale, ma inserire un campo "value" da impostare
+
+Di seguito una descrizione del gestionale, vista da un gestore che ha rapporto con alcuni clienti a cui installa i pannelli fisici.
+
+
+
+Da dashboard online si possono creare pannelli specificando:
+
+	- Nome
+	- Codice univoco a cinque numeri
+	- Cliente (o selezionabile o solo visualizzato in base a dove si trova nella pagina)
+	- Selezione modello
+	- Selezione eventuali espansioni collegate (specificando indirizzo i2c)
+
+Per il pannello viene richiesto quali porte attivare. Ci deve essere un pulsante salva che invia la configurazione al dispositivo (LOG di modifica avvenuta?).
+Vanno mandate le configurazioni delle porte solo per quelle che si vogliono attivare, quindi non per forza per tutte quelle del modello.
+Si potrebbe valutare un flag "attiva", ma finché mando il JSON completo ad ogni minimo cambiamento, non ha senso mandare dati per tutte le porte se questi non servono.
+
+Le porte attive in input, manderanno ogni tot (configurabile dall'utente?) i dati delle letture.
+
+Le porte attive in output, sono normalmente impostate in modalità manuale e spente.
+Per le porte di output può essere impostata la modalità automatica o manuale.
+Se selezionata quella automatica, viene chiesto di impostare uno schedule settimanale, impostando per ogni giorno fasce di orari con scelta di eccezioni. Va salvato e inviato (LOG?).
+Lo schedule va applicato necessariamente ad un gruppo, quindi bisogna creare un gruppo che contiene le porte di output a cui applicare la modifica.
+Il gestionale conosce già la tipologia delle porte (input/output e digitale/analogico/transistor).

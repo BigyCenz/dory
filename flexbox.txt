@@ -1,0 +1,16 @@
+La proprietà FLEX va messa al padre, al contenitore "display: flex".
+Ci sono asse principale (orizzontale normalmente) e asse secondario (verticale).
+Per l'asse principale usiamo "justify-content" con "flex-start", "flex-end", "center", "space-between", "space-evenly", "space-around".
+Per l'asse secondario usiamo "align-items" con gli stessi valori.
+
+L'attributo "flex-direction", può essere "row", "row-reverse" o "column" e "column-reverse".
+Si scambia il significato degli attributi "justify-content" e "align-items".
+
+Se siamo su più righe avremo più assi orizzontali.
+Se vogliamo allineare tutte le righe assieme usiamo "align-content" con gli stessi attribuyi di "justify-content".
+
+Usiamo "gap" e non "margin" per spaziare.
+Possiamo dividere "row-gap" e "column-gap".
+
+Normalmente i figli si stringono se si stringe la pagina.
+Se vogliamo vadano su più righe facciamo "flex-wrap" in modalità "wrap".

@@ -1,0 +1,55 @@
+Di seguito le istruzioni per creare un progetto di base funzionante che comprende una dashboard in react, un backend in python e un database MySql.
+Le funzionalità implementate sono: login, rotte protette, api.
+
+---------------------- REACT --------------------------
+
+Richiesti Node e Vite.
+
+---- CREAZIONE PROGETTO ----
+
+npm create vite@latest
+cd DoryGestionale
+npm install
+
+---- INSTALLAZIONE PACCHETTI UTILI ----
+
+npm i react-router-dom
+npm i jwt-decode
+npm i tailwindcss @tailwindcss/vite
+npm i axios
+
+---- ISTRUZIONI ----
+
+Per Tailwind bisogna seguire la guida: https://tailwindcss.com/docs/installation/using-vite
+
+---- AVVIO APP ----
+
+npm run dev
+
+
+-------------------------- PYTHON BACKEND ---------------------------
+
+Creare file ".env" e metterlo nel gitignore
+
+python -m venv venv
+venv\Scripts\activate
+
+Una volta creato e attivato l'ambiente virtuale, bisogna selezionare l'interpete Python corretto.
+Basta cliccare sull'icona in basso a destra (a destra di quella di copilot) e si apre un selettore in alto dove dovremmo scegliere "venv".
+
+python.exe -m pip install --upgrade pip
+pip install python-dotenv
+pip install flask flask-cors flask-jwt-extended
+pip install mysql-connector-python
+
+python app.py
+
+--------------------------- DATABASE ---------------------------------
+
+Serve MySql installato e servizio avviato. Password di default "root".
+I comandi non sono necessari se si usa la "create_user" di prova in python.
+
+mysql -u root -p
+CREATE DATABASE dory;
+USE dory;
+CREATE TABLE users ( userid INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL);
